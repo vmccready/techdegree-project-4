@@ -6,11 +6,11 @@ class Game {
     constructor() {
         this.missed = 0;
         this.phrases = [
-            new Phrase('PHRASE one'),
-            new Phrase('PHRASE two'),
-            new Phrase('PHRASE three'),
-            new Phrase('PHRASE four'),
-            new Phrase('PHRASE five')
+            new Phrase('Object Oriented'),
+            new Phrase('Callback Functions'),
+            new Phrase('Array Iteration'),
+            new Phrase('Event Listeners'),
+            new Phrase('HTML and CSS')
         ]
         this.activePhrase = null;
     }
@@ -25,7 +25,7 @@ class Game {
     }
 
     getRandomPhrase() {
-        return this.phrases[Math.floor(Math.random() * 5)];
+        return this.phrases[Math.floor(Math.random() * (phrases.length))];
     }
 
     // handle input
