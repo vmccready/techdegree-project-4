@@ -35,7 +35,12 @@ class Game {
         if (this.activePhrase.checkLetter(button.textContent)) {
             button.classList.add('chosen');
             this.activePhrase.showMatchedLetter(button.textContent);
-            if (this.checkForWin()) { this.gameOver('win') }
+            //if Win
+            if (this.checkForWin()) { 
+                //disable buttons so phrase shows for a second
+                $('#qwerty button').attr('disabled', true);
+                setTimeout(()=> {this.gameOver('win')}, 1500); 
+            }
         } else {
             button.classList.add('wrong');
             this.removeLife();
@@ -50,7 +55,7 @@ class Game {
         if (this.missed === 5) { this.gameOver('lose') }
         $('body').css('background-color', `rgb(217, 69, 69, ${this.missed*.2}`);
     }
-
+//217, 69, 69
     checkForWin() {
         return document.querySelectorAll('#phrase li[class*=hide]').length == 0;
     }
