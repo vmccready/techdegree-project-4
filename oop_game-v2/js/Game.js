@@ -25,7 +25,7 @@ class Game {
     }
 
     getRandomPhrase() {
-        return this.phrases[Math.floor(Math.random() * (phrases.length))];
+        return this.phrases[Math.floor(Math.random() * (this.phrases.length))];
     }
 
     // handle input
